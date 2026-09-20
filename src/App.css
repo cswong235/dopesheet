@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap');
+
+:root {
+  --ink: #000;
+  --blue: #1673d1;
+  --red: #e5342b;
+  --yellow: #ffd23f;
+  --paper: #f3f7fc;
+  --grid: #dce6f2;
+
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Instrument Sans', system-ui, sans-serif;
+
+  --border: 3px solid var(--ink);
+  --hard-shadow: 6px 6px 0 var(--ink);
+
+  --bs-body-font-family: var(--font-body);
+  --bs-body-bg: var(--paper);
+  --bs-body-color: #1d232b;
+}
+
+.masthead {
+  background: #fff;
+  padding-bottom: 1.75rem;
+  text-align: center;
+}
+
+.masthead img {
+  height: 300px;
+  margin-top: 40px;
+}
+
+.masthead :is(h1, h2, h3, h4) {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+.film-strip {
+  height: 28px;
+  background-color: var(--ink);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='28'%3E%3Crect x='11' y='8' width='14' height='12' rx='3' fill='white'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 6px 0;
+}
+
+.search-dock {
+  position: sticky;
+  top: 16px;
+  z-index: 10;
+  margin-top: 1.75rem;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  border: var(--border);
+  border-radius: 24px;
+  box-shadow: var(--hard-shadow);
+}
+
+.search-field {
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  cursor: text;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.search-field:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(22, 115, 209, 0.3);
+}
+
+.search-input {
+  min-width: 0;
+  background: transparent;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #7b8794;
+}
+
+.btn.btn-lucky {
+  --bs-btn-bg: var(--yellow);
+  --bs-btn-color: var(--ink);
+  --bs-btn-border-color: var(--ink);
+  --bs-btn-border-width: 3px;
+  --bs-btn-hover-bg: #ffe066;
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-hover-border-color: var(--ink);
+  --bs-btn-active-bg: #ffc400;
+  --bs-btn-active-color: var(--ink);
+  --bs-btn-active-border-color: var(--ink);
+
+  font-family: var(--font-display);
+  font-weight: 700;
+  padding: 0.55rem 1.5rem;
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn.btn-lucky:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.btn.btn-lucky:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.badge.count-badge {
+  background: var(--yellow);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 0.4em 0.85em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  transform: rotate(-1.5deg);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* Hide the pill entirely when there's nothing to count */
+.badge.count-badge:empty {
+  display: none;
+}
+
+.show-card {
+  background: #fff;
+  border: var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--hard-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.show-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--blue);
+}
+
+.poster-wrap {
+  position: relative;
+}
+
+.poster-wrap .poster-img {
+  display: block;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  border-radius: 0;
+  border-bottom: var(--border);
+  background: var(--grid);
+}
+
+.rating-stamp {
+  position: absolute;
+  right: 14px;
+  bottom: -26px;
+  width: 66px;
+  height: 66px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: var(--border);
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-display);
+  line-height: 1;
+  transform: rotate(-10deg);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.rating-stamp strong {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.rating-stamp small {
+  font-size: 0.65rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.show-card .card-body {
+  padding: 1.25rem 1rem 1rem;
+}
+
+.show-title {
+  padding-right: 3.5rem; /* keeps long titles clear of the rating stamp */
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.badge.genre-pill {
+  background: #fff;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.35em 0.85em;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.summary {
+  overflow: hidden;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #3b4652;
+}
+
+.summary p {
+  margin: 0;
+}
+
+.btn.btn-imdb {
+  --bs-btn-bg: var(--ink);
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: var(--ink);
+  --bs-btn-border-width: 3px;
+  --bs-btn-hover-bg: var(--blue);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-border-color: var(--ink);
+  --bs-btn-active-bg: var(--blue);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-border-color: var(--ink);
+
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-radius: 12px;
+  transition: background-color 0.15s ease;
+}
+
+.state-panel {
+  background: #fff;
+  border: 3px dashed var(--ink);
+  border-radius: 24px;
+  box-shadow: 6px 6px 0 var(--blue);
+  min-height: 220px;
+  text-align: center;
+}
+
+.state-panel .spinner-border {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 0.3em;
+  color: var(--blue);
+}
+
+.state-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.state-emoji {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.state-error {
+  border-color: var(--red);
+  box-shadow: 6px 6px 0 var(--red);
+}
+
+.state-error .state-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.site-footer {
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
